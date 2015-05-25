@@ -62,7 +62,7 @@ class FeatureImagesController extends Controller {
         $results = [];
         $destination =  public_path('images/feature/');
         $imageURL = '/images/feature/';
-        $imagetoURL = '/public/images/feature/';
+        $imagetoURL = '/images/feature/';
         // end variables
 
 
