@@ -166,7 +166,7 @@ class FeatureController extends Controller {
 	public function destroy($id)
 	{
         $feature = Feature::findOrFail($id);
-        
+        $name = ''; 
         $path = public_path('images/feature/');
         $destination = $path . $name;
 
