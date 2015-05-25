@@ -58,7 +58,7 @@ class HouseImagesController extends Controller {
         $results = [];
         $destination =  public_path('images/house/');
         $imageURL = '/images/house/';
-        $imagetoURL = '/RealEstate/RealEstate/public/images/house/';
+        $imagetoURL = '/developers/public/images/feature/';
         // end variables
 
 
