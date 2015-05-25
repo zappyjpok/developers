@@ -6,14 +6,7 @@
     @include('layouts._nav')
     @include('layouts._jumboTron')
 
-
-    @if(isset($features))
-        <h1> It's good </h1>
-        @else
-        <h1> It's bad</h1>
-    @endif
-
-
+    
     @if(isset($results))
         <ul>
             @foreach($results as $result)
@@ -35,19 +28,7 @@
                     </h3>
                     <div> <img src="{{ \App\Services\ChangeName::changeToThumbnail($feature->FeatureImages->first()->imagePath . $feature->FeatureImages->first()->image) }}" ></div>
                     <p> {{ $feature->description }}</p>
-                    @if (Auth::user())
-                        <div>
-                            <div class="float-left">
-                                <a href="{{ action('FeatureController@edit', [$feature->id]) }}" class="btn btn-info btn-sm"> Edit Feature </a>
-                            </div>
-                            <div class="float-left">
-                                {!! Form::open(['method' => 'DELETE', 'route' => ['features.destroy', $feature->id ]]) !!}
-                                     {!! Form::submit('Delete', ['class' => "btn btn-danger btn-sm"]) !!}
-                                {!! Form::close() !!}
-                            </div>
 
-                        </div>
-                    @endif
                 </section>
                 <?php $i++ ?>
                 @if($i === 4)
