@@ -30,7 +30,15 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+        $pageTitle = "Home Development";
+        $message = 'The place to go when you are thinking about development!';
+
+
+
+        return view('welcome')->with([
+            'pageTitle' => $pageTitle,
+            'message' => $message
+        ]);
 	}
 
 }
