@@ -166,23 +166,9 @@ class FeatureController extends Controller {
 	public function destroy($id)
 	{
         $feature = Feature::findOrFail($id);
-        $name = ''; 
-        $path = public_path('images/feature/');
-        $destination = $path . $name;
-
-
-        //Delete the image and thumbnail
-        try {
-            $delete = new DeleteFile($destination);
-            $delete->deleteThumbnail();
-            $delete->deleteFile();
-            $results = $delete->getMessages();
-        } catch (Exception $e) {
-            $results = $e ->getMessage();
-        }
+       
 
         // Delete the path from the datebase
-
         $feature->delete();
         return redirect('features');
 
