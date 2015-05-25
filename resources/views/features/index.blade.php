@@ -25,8 +25,7 @@
                     <h3>
                         <a href="{{ action('FeatureController@show', [$feature->id]) }}"> {{ $feature->name }} </a>
                     </h3>
-                    <div>
-                        <img src="{{ \App\Services\ChangeName::changeToThumbnail($feature->FeatureImages->first()->imagePath . $feature->FeatureImages->first()->image) }}" ></div>
+                    <div> <img src="{{ \App\Services\ChangeName::changeToThumbnail($feature->FeatureImages->first()->imagePath . $feature->FeatureImages->first()->image) }}" ></div>
                     <p> {{ $feature->description }}</p>
                     @if (Auth::user())
                         <div>
