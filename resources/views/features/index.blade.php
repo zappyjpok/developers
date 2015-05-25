@@ -6,6 +6,14 @@
     @include('layouts._nav')
     @include('layouts._jumboTron')
 
+
+    @if(isset($features))
+        <h1> It's good </h1>
+        @else
+        <h1> It's bad</h1>
+    @endif
+
+
     @if(isset($results))
         <ul>
             @foreach($results as $result)
